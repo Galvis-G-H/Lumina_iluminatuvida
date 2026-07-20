@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumina - Catálogo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Enlace de Font Awesome 6 moderno (Se actualizó la versión 4.7.0) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <script>
+        tailwind.config = { theme: { extend: { colors: { primary: '#8B4513', secondary: '#F5DEB3', accent: '#D2B48C', light: '#FFFAF0', dark: '#5C3317' }, fontFamily: { sans: ['Montserrat', 'sans-serif'], serif: ['Playfair Display', 'serif'] } } } }
+    </script>
+</head>
+<body class="bg-light text-dark font-sans min-h-screen flex flex-col justify-between">
+    <header class="bg-gradient-to-r from-primary to-dark text-white py-6 px-4 md:px-8 sticky top-0 z-50 shadow-md">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
+            <h1 class="text-3xl font-serif font-bold mb-4 md:mb-0">Lumina</h1>
+            <nav class="flex gap-6 font-medium">
+                <a href="index.html" class="hover:text-secondary transition">Inicio</a>
+                <a href="nosotros.html" class="hover:text-secondary transition">Nosotros</a>
+                <a href="catalogo.html" class="text-secondary border-b-2 border-secondary pb-1">Catálogo</a>
+                <!-- Se eliminó de aquí la opción 'Administrar' -->
+                <a href="contacto.html" class="hover:text-secondary transition">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-12 flex-grow">
+        <h2 class="text-4xl font-serif font-bold text-center text-primary mb-12">Nuestras Velas</h2>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- PRODUCTO 1: Vela de Lavanda -->
+            <div class="bg-white rounded-xl overflow-hidden shadow-md border border-accent/10">
+                <!-- Imagen del producto -->
+                <div class="h-56 bg-accent/10 overflow-hidden">
+                    <img src="AQUÍ_VA_EL_ENLACE_DE_TU_FOTO_DE_LAVANDA.jpg" alt="Vela artesanal de Lavanda Lumina" class="w-full h-full object-cover">
+                </div>
+                <div class="p-5">
+                    <h3 class="font-serif font-bold text-xl text-primary mb-1">Vela de Lavanda</h3>
+                    <!-- Pequeña descripción visible en la tarjeta -->
+                    <p class="text-gray-600 text-sm mb-3 line-clamp-2">Ideal para relajarse antes de dormir. Hecha con cera natural de soya y extractos puros.</p>
+                    <p class="text-dark font-semibold text-lg mb-3">$ 45.000 COP</p>
+                    <button class="w-full bg-secondary hover:bg-accent text-dark font-medium py-2 px-4 rounded-lg transition btn-detalles" 
+                            data-nombre="Vela de Lavanda" data-precio="45000" data-descripcion="Ideal para relajarse antes de dormir. Cera natural de soya con extractos puros de lavanda francesa. Hecha a mano con pabilo de algodón ecológico.">
+                        Ver detalles
+                    </button>
+                </div>
+            </div>
+
+            <!-- PRODUCTO 2: Vela de Vainilla & Canela -->
+            <div class="bg-white rounded-xl overflow-hidden shadow-md border border-accent/10">
+                <!-- Imagen del producto -->
+                <div class="h-56 bg-accent/10 overflow-hidden">
+                    <img src="AQUÍ_VA_EL_ENLACE_DE_TU_FOTO_DE_VAINILLA.jpg" alt="Vela artesanal de Vainilla y Canela Lumina" class="w-full h-full object-cover">
+                </div>
+                <div class="p-5">
+                    <h3 class="font-serif font-bold text-xl text-primary mb-1">Vela de Vainilla & Canela</h3>
+                    <!-- Pequeña descripción visible en la tarjeta -->
+                    <p class="text-gray-600 text-sm mb-3 line-clamp-2">Un aroma dulce y acogedor perfecto para ambientar tus tardes frías de café.</p>
+                    <p class="text-dark font-semibold text-lg mb-3">$ 48.000 COP</p>
+                    <button class="w-full bg-secondary hover:bg-accent text-dark font-medium py-2 px-4 rounded-lg transition btn-detalles" 
+                            data-nombre="Vela de Vainilla & Canela" data-precio="48000" data-descripcion="Un aroma dulce y acogedor perfecto para las tardes frías de café. Elaborada con esencias de alta calidad y cera de soya biodegradable.">
+                        Ver detalles
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Ventana emergente (Modal) para ver detalles del producto -->
+    <div id="modalDetalles" class="fixed inset-0 bg-black/70 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-lg w-full p-6 shadow-2xl">
+            <div class="flex justify-between items-center mb-4">
+                <h3 id="modalTitulo" class="font-serif font-bold text-2xl text-primary"></h3>
+                <button id="cerrarModal" class="text-gray-500 hover:text-dark text-xl">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <p id="modalPrecio" class="text-dark font-bold text-xl mb-4"></p>
+            <p id="modalDescripcion" class="text-gray-700 leading-relaxed"></p>
+        </div>
+    </div>
+
+    <footer class="bg-gradient-to-r from-dark to-primary text-white py-6 text-center text-sm">
+        © 2026 Lumina - Todos los derechos reservados
+    </footer>
+
+    <script>
+        const modal = document.getElementById('modalDetalles');
+        const btnDetalles = document.querySelectorAll('.btn-detalles');
+        
+        btnDetalles.forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.getElementById('modalTitulo').textContent = this.dataset.nombre;
+                document.getElementById('modalPrecio').textContent = `$ ${parseInt(this.dataset.precio).toLocaleString('es-CO')} COP`;
+                document.getElementById('modalDescripcion').textContent = this.dataset.descripcion;
+                modal.classList.remove('hidden');
+            });
+        });
+
+        document.getElementById('cerrarModal').addEventListener('click', () => modal.classList.add('hidden'));
+
+        // Cierra el modal si se hace clic fuera de la cajita blanca
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                modal.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>

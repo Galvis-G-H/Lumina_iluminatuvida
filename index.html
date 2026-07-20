@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumina - Inicio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Enlace de Font Awesome 6 moderno (Se actualizó la versión 4.7.0 antigua) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { primary: '#8B4513', secondary: '#F5DEB3', accent: '#D2B48C', light: '#FFFAF0', dark: '#5C3317' },
+                    fontFamily: { sans: ['Montserrat', 'sans-serif'], serif: ['Playfair Display', 'serif'] }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-light text-dark font-sans min-h-screen flex flex-col justify-between">
+    
+    <header class="bg-gradient-to-r from-primary to-dark text-white py-6 px-4 md:px-8 sticky top-0 z-50 shadow-md">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
+            <div class="flex items-center mb-4 md:mb-0">
+                <!-- Icono de fuego actualizado a Font Awesome 6 -->
+                <i class="fa-solid fa-fire text-3xl mr-3 text-secondary"></i>
+                <h1 class="text-3xl font-serif font-bold">Lumina</h1>
+            </div>
+            <nav class="flex gap-6 font-medium">
+                <a href="index.html" class="text-secondary border-b-2 border-secondary pb-1">Inicio</a>
+                <a href="nosotros.html" class="hover:text-secondary transition">Nosotros</a>
+                <a href="catalogo.html" class="hover:text-secondary transition">Catálogo</a>
+                <!-- Se eliminó de aquí la opción 'Administrar' -->
+                <a href="contacto.html" class="hover:text-secondary transition">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-16 flex-grow text-center">
+        <section class="max-w-3xl mx-auto bg-white p-12 rounded-2xl shadow-xl border border-accent/20">
+            <h2 class="text-4xl md:text-5xl font-serif font-bold text-primary mb-6">Lumina ilumina tu vida</h2>
+            <p class="text-lg text-gray-700 mb-8 leading-relaxed">
+                Descubre nuestra colección de velas artesanales, elaboradas con ceras naturales y aromas cuidadosamente seleccionados para transformar tu entorno en un oasis de paz y armonía.
+            </p>
+            <div class="flex justify-center gap-4">
+                <a href="catalogo.html" class="bg-primary hover:bg-dark text-white px-8 py-3 rounded-lg font-medium transition shadow-md">Ver Catálogo</a>
+                <a href="nosotros.html" class="bg-secondary hover:bg-accent text-dark px-8 py-3 rounded-lg font-medium transition shadow-md">Conócenos</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gradient-to-r from-dark to-primary text-white py-6 text-center text-sm opacity-90">
+        © 2026 Lumina - Todos los derechos reservados
+    </footer>
+</body>
+</html>
