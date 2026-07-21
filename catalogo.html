@@ -6,14 +6,32 @@
     <title>Lumina - Catálogo</title>
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Enlace de Font Awesome 6 moderno (Se actualizó la versión 4.7.0) -->
+    <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <script>
-        tailwind.config = { theme: { extend: { colors: { primary: '#8B4513', secondary: '#F5DEB3', accent: '#D2B48C', light: '#FFFAF0', dark: '#5C3317' }, fontFamily: { sans: ['Montserrat', 'sans-serif'], serif: ['Playfair Display', 'serif'] } } } }
+        tailwind.config = { 
+            theme: { 
+                extend: { 
+                    colors: { 
+                        primary: '#8B4513', 
+                        secondary: '#F5DEB3', 
+                        accent: '#D2B48C', 
+                        light: '#FFFAF0', 
+                        dark: '#5C3317' 
+                    }, 
+                    fontFamily: { 
+                        sans: ['Montserrat', 'sans-serif'], 
+                        serif: ['Playfair Display', 'serif'] 
+                    } 
+                } 
+            } 
+        }
     </script>
 </head>
 <body class="bg-light text-dark font-sans min-h-screen flex flex-col justify-between">
+
+    <!-- Encabezado / Navegación -->
     <header class="bg-gradient-to-r from-primary to-dark text-white py-6 px-4 md:px-8 sticky top-0 z-50 shadow-md">
         <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
             <h1 class="text-3xl font-serif font-bold mb-4 md:mb-0">Lumina</h1>
@@ -21,92 +39,127 @@
                 <a href="index.html" class="hover:text-secondary transition">Inicio</a>
                 <a href="nosotros.html" class="hover:text-secondary transition">Nosotros</a>
                 <a href="catalogo.html" class="text-secondary border-b-2 border-secondary pb-1">Catálogo</a>
-                <!-- Se eliminó de aquí la opción 'Administrar' -->
                 <a href="contacto.html" class="hover:text-secondary transition">Contacto</a>
             </nav>
         </div>
     </header>
 
+    <!-- Contenido Principal -->
     <main class="container mx-auto px-4 py-12 flex-grow">
         <h2 class="text-4xl font-serif font-bold text-center text-primary mb-12">Nuestras Velas</h2>
         
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             
-            <!-- PRODUCTO 1: Vela de Lavanda -->
-            <div class="bg-white rounded-xl overflow-hidden shadow-md border border-accent/10">
-                <!-- Imagen del producto -->
-                <div class="h-56 bg-accent/10 overflow-hidden">
-                    <img src="AQUÍ_VA_EL_ENLACE_DE_TU_FOTO_DE_LAVANDA.jpg" alt="Vela artesanal de Lavanda Lumina" class="w-full h-full object-cover">
+            <!-- PRODUCTO 1: Vela Torre de Burbujas -->
+            <div class="bg-white rounded-xl overflow-hidden shadow-md border border-accent/10 flex flex-col justify-between">
+                <div class="h-60 bg-accent/10 overflow-hidden">
+                    <img src="Imagenes/Torre_de_burbujas.jpeg" alt="Vela artesanal Torre de Burbujas sin aroma Lumina" class="w-full h-full object-cover">
                 </div>
-                <div class="p-5">
-                    <h3 class="font-serif font-bold text-xl text-primary mb-1">Vela de Lavanda</h3>
-                    <!-- Pequeña descripción visible en la tarjeta -->
-                    <p class="text-gray-600 text-sm mb-3 line-clamp-2">Ideal para relajarse antes de dormir. Hecha con cera natural de soya y extractos puros.</p>
-                    <p class="text-dark font-semibold text-lg mb-3">$ 45.000 COP</p>
-                    <button class="w-full bg-secondary hover:bg-accent text-dark font-medium py-2 px-4 rounded-lg transition btn-detalles" 
-                            data-nombre="Vela de Lavanda" data-precio="45000" data-descripcion="Ideal para relajarse antes de dormir. Cera natural de soya con extractos puros de lavanda francesa. Hecha a mano con pabilo de algodón ecológico.">
-                        Ver detalles
-                    </button>
+                <div class="p-5 flex flex-col flex-grow justify-between">
+                    <div>
+                        <h3 class="font-serif font-bold text-xl text-primary mb-1">Vela Torre de Burbujas</h3>
+                        <p class="text-gray-600 text-sm mb-3 line-clamp-2">Diseño moderno en forma de torre de esferas, sin aroma. Un toque decorativo e innovador para tus espacios.</p>
+                    </div>
+                    <div>
+                        <p class="text-dark font-semibold text-lg mb-3">$ 12.000 COP</p>
+                        <button class="w-full bg-secondary hover:bg-accent text-dark font-medium py-2 px-4 rounded-lg transition btn-detalles" 
+                                data-nombre="Vela Torre de Burbujas" 
+                                data-precio="12000" 
+                                data-imagen="Imagenes/Torre_de_burbujas.jpeg"
+                                data-descripcion="Vela artesanal moldeada con un elegante diseño geométrico de torre de burbujas. Elaborada con cera 100% ecológica y sin fragancia, ideal para amantes de la decoración moderna y estética minimalista.">
+                            Ver detalles
+                        </button>
+                    </div>
                 </div>
             </div>
 
-            <!-- PRODUCTO 2: Vela de Vainilla & Canela -->
-            <div class="bg-white rounded-xl overflow-hidden shadow-md border border-accent/10">
-                <!-- Imagen del producto -->
-                <div class="h-56 bg-accent/10 overflow-hidden">
-                    <img src="AQUÍ_VA_EL_ENLACE_DE_TU_FOTO_DE_VAINILLA.jpg" alt="Vela artesanal de Vainilla y Canela Lumina" class="w-full h-full object-cover">
+            <!-- PRODUCTO 2: Vela Virgen Pequeña -->
+            <div class="bg-white rounded-xl overflow-hidden shadow-md border border-accent/10 flex flex-col justify-between">
+                <div class="h-60 bg-accent/10 overflow-hidden">
+                    <img src="Imagenes/virgenes_pequenas.jpeg" alt="Vela artesanal Virgen Pequeña sin aroma Lumina" class="w-full h-full object-cover">
                 </div>
-                <div class="p-5">
-                    <h3 class="font-serif font-bold text-xl text-primary mb-1">Vela de Vainilla & Canela</h3>
-                    <!-- Pequeña descripción visible en la tarjeta -->
-                    <p class="text-gray-600 text-sm mb-3 line-clamp-2">Un aroma dulce y acogedor perfecto para ambientar tus tardes frías de café.</p>
-                    <p class="text-dark font-semibold text-lg mb-3">$ 48.000 COP</p>
-                    <button class="w-full bg-secondary hover:bg-accent text-dark font-medium py-2 px-4 rounded-lg transition btn-detalles" 
-                            data-nombre="Vela de Vainilla & Canela" data-precio="48000" data-descripcion="Un aroma dulce y acogedor perfecto para las tardes frías de café. Elaborada con esencias de alta calidad y cera de soya biodegradable.">
-                        Ver detalles
-                    </button>
+                <div class="p-5 flex flex-col flex-grow justify-between">
+                    <div>
+                        <h3 class="font-serif font-bold text-xl text-primary mb-1">Vela Virgen Pequeña</h3>
+                        <p class="text-gray-600 text-sm mb-3 line-clamp-2">Vela ecológica moldeada sin aroma, ideal para decoración, serenidad y momentos de reflexión.</p>
+                    </div>
+                    <div>
+                        <p class="text-dark font-semibold text-lg mb-3">$ 8.000 COP</p>
+                        <button class="w-full bg-secondary hover:bg-accent text-dark font-medium py-2 px-4 rounded-lg transition btn-detalles" 
+                                data-nombre="Vela Virgen Pequeña" 
+                                data-precio="8000" 
+                                data-imagen="Imagenes/virgenes_pequenas.jpeg"
+                                data-descripcion="Vela ecológica moldeada elaborada a base de cera de soja 100% natural y sin fragancia. Perfecta para aportar luz, serenidad y un toque elegante a tus espacios sin saturar el ambiente.">
+                            Ver detalles
+                        </button>
+                    </div>
                 </div>
             </div>
 
         </div>
     </main>
 
-    <!-- Ventana emergente (Modal) para ver detalles del producto -->
+    <!-- Ventana emergente (Modal) con la foto a tamaño original -->
     <div id="modalDetalles" class="fixed inset-0 bg-black/70 z-50 hidden flex items-center justify-center p-4">
-        <div class="bg-white rounded-2xl max-w-lg w-full p-6 shadow-2xl">
+        <div class="bg-white rounded-2xl max-w-lg w-full p-6 shadow-2xl flex flex-col max-h-[90vh] overflow-y-auto">
             <div class="flex justify-between items-center mb-4">
                 <h3 id="modalTitulo" class="font-serif font-bold text-2xl text-primary"></h3>
-                <button id="cerrarModal" class="text-gray-500 hover:text-dark text-xl">
+                <button id="cerrarModal" class="text-gray-500 hover:text-dark text-xl p-1">
                     <i class="fa-solid fa-xmark"></i>
                 </button>
             </div>
-            <p id="modalPrecio" class="text-dark font-bold text-xl mb-4"></p>
-            <p id="modalDescripcion" class="text-gray-700 leading-relaxed"></p>
+            
+            <!-- Contenedor para la Imagen Completa sin recortar -->
+            <div class="w-full max-h-90 bg-gray-50 rounded-xl mb-4 overflow-hidden flex items-center justify-center border border-accent/20">
+                <img id="modalImagen" src="" alt="Foto de la vela" class="w-full h-full object-contain">
+            </div>
+
+            <p id="modalPrecio" class="text-dark font-bold text-xl mb-2"></p>
+            <p id="modalDescripcion" class="text-gray-700 leading-relaxed text-sm md:text-base"></p>
         </div>
     </div>
 
+    <!-- Pie de página -->
     <footer class="bg-gradient-to-r from-dark to-primary text-white py-6 text-center text-sm">
         © 2026 Lumina - Todos los derechos reservados
     </footer>
 
+    <!-- Scripts de Interactividad -->
     <script>
         const modal = document.getElementById('modalDetalles');
         const btnDetalles = document.querySelectorAll('.btn-detalles');
+        const cerrarBtn = document.getElementById('cerrarModal');
         
+        // Abrir Modal con información e imagen completa del producto
         btnDetalles.forEach(btn => {
             btn.addEventListener('click', function() {
+                const precio = parseInt(this.dataset.precio, 10);
                 document.getElementById('modalTitulo').textContent = this.dataset.nombre;
-                document.getElementById('modalPrecio').textContent = `$ ${parseInt(this.dataset.precio).toLocaleString('es-CO')} COP`;
+                document.getElementById('modalPrecio').textContent = `$ ${precio.toLocaleString('es-CO')} COP`;
                 document.getElementById('modalDescripcion').textContent = this.dataset.descripcion;
+                
+                // Cargar la imagen completa en el modal
+                const modalImg = document.getElementById('modalImagen');
+                modalImg.src = this.dataset.imagen;
+                modalImg.alt = this.dataset.nombre;
+
                 modal.classList.remove('hidden');
             });
         });
 
-        document.getElementById('cerrarModal').addEventListener('click', () => modal.classList.add('hidden'));
+        // Cerrar Modal con botón X
+        cerrarBtn.addEventListener('click', () => modal.classList.add('hidden'));
 
-        // Cierra el modal si se hace clic fuera de la cajita blanca
+        // Cerrar Modal al hacer clic en el fondo oscuro
         modal.addEventListener('click', function(e) {
             if (e.target === modal) {
+                modal.classList.add('hidden');
+            }
+        });
+
+        // Cerrar Modal al presionar la tecla ESC
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
                 modal.classList.add('hidden');
             }
         });
